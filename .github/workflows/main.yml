@@ -22,13 +22,13 @@ jobs:
       with:
         arch: arm64
         compiler: gcc/12
-        defconfig: your_defconfig
+        defconfig: defconfig
         image: Image.gz-dtb
 
     - name: Upload Kernel and Module
       uses: actions/upload-artifact@v4
       with:
-        name: module
+        name: kernelandmodule
         path: |
           ${{ steps.build.outputs.outfile }}
           ./out/drivers/memkernel/memkernel.ko
